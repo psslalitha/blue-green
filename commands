@@ -20,3 +20,4 @@
   20 nano service.yml
   21 nano service.yml
   22 kubectl apply -f service.yml #(app:green)
+  23 eksctl delete cluster --name=eksbg1 --region=ap-south-1
