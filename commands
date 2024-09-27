@@ -1,0 +1,22 @@
+1 eksctl create cluster --name=eksbg1 --region=ap-south-1 --zones=ap-south-1a,ap-south-1b --version=1.30 --without-nodegroup
+   2 eksctl create nodegroup --cluster=eksbg1 --region=ap-south-1 --name=eksbg1-ng-public1 --node-type=t3.medium --nodes=2 --nodes-min=2 --nodes-max=4 --node-volume-size=20 --ssh-access --ssh-public-key=nexus --managed --asg-access --external-dns-access --full-ecr-access --appmesh-access --alb-ingress-access
+   3 aws eks update-kubeconfig --name eksdemo --region ap-south-1
+   4 aws eks update-kubeconfig --name eksbg1 --region ap-south-1
+   5 eksctl utils write-kubeconfig --cluster=eksbg1
+   6 nano blue.yml
+   7 docker login
+   8 kubectl apply -f blue.yml
+   9 nano blue.yml
+  10 kubectl apply -f blue.yml
+  11 kubectl get deployment
+  12 kubectl get pods -o wides
+  13 kubectl get pods -o wide
+  14 nano green.yml
+  15 kubectl apply -f green.yml
+  16 kubectl get pods -o wide
+  17 nano service.yml
+  18 kubectl apply -f service.yml
+  19 kubectl get svc
+  20 nano service.yml
+  21 nano service.yml
+  22 kubectl apply -f service.yml
