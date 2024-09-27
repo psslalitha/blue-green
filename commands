@@ -9,14 +9,14 @@
    9 nano blue.yml
   10 kubectl apply -f blue.yml
   11 kubectl get deployment
-  12 kubectl get pods -o wides
+  12 kubectl get pods -o wide
   13 kubectl get pods -o wide
   14 nano green.yml
   15 kubectl apply -f green.yml
   16 kubectl get pods -o wide
   17 nano service.yml
-  18 kubectl apply -f service.yml
+  18 kubectl apply -f service.yml  #(app: blue)
   19 kubectl get svc
   20 nano service.yml
   21 nano service.yml
-  22 kubectl apply -f service.yml
+  22 kubectl apply -f service.yml #(app:green)
